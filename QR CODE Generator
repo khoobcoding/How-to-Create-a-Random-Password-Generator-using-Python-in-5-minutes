@@ -1,0 +1,38 @@
+# pip install qrcode  
+# run the upper line text on your terminal with internet connection
+
+# import qrcode
+# img=qrcode.make(' Some data here ')
+# img.show()
+
+# import qrcode
+
+# qr=qrcode.QRCode(
+#     box_size=20,
+#     border=2,
+# )
+# qr.add_data(' Some data Here ')
+# qr.make(fit=True)
+
+# img=qr.make_image(fill_color='black', back_color='white')
+# img.show()
+
+
+# Now i am going to create custom QR Code Generator
+import qrcode
+
+data_input=input(' Enter the data ')
+box_size_input=int(input( ' Enter the box size '))
+border_input=int(input(' Enter the boder '))
+fill_color_input=input(' Enter Foreground color ').lower()
+back_color_input=input(' Enter Background Color ').lower()
+
+qr=qrcode.QRCode(
+    box_size=box_size_input,
+    border=border_input,
+)
+qr.add_data(data_input)
+qr.make(fit=True)
+
+img=qr.make_image(fill_color=fill_color_input,back_color=back_color_input)
+img.show(3)
